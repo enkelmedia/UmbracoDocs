@@ -11,10 +11,10 @@ This page is a work in progress.&#x20;
 ```typescript
 import { html, LitElement } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/element';
-import { UmbModalManagerContext, UMB_MODAL_MANAGER_CONTEXT_TOKEN } from '@umbraco-cms/modal';
+import { UmbModalManagerContext, UMB_MODAL_MANAGER_CONTEXT_TOKEN,,UMB_CONFIRM_MODAL } from '@umbraco-cms/backoffice/modal';
 
 class MyElement extends UmbElementMixin(LitElement) {
-	#modalManagerContext?: UmbmodalManagerContext;
+	#modalManagerContext?: UmbModalManagerContext;
 	
 	constructor() {
 		super();
