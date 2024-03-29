@@ -14,12 +14,14 @@ Umbraco States enables you to create [Observables](states.md#observables) based 
 
 Umbraco comes with a State type for the most common types of data:
 
-* Array State
-* Boolean State
-* Class State
-* Number State
-* Object State
-* String State
+| Description    | Type Name          |
+|----------------|--------------------|
+| String State   | UmbStringState     |
+| Number State   | UmbNumberState     |
+| Arrary State   | UmbArrayState      |
+| Boolean State  | UmbBooleanState    |
+| Object State   | UmbObjectState     |
+| Class State    | UmbClassState      |
 
 ### Observables
 
