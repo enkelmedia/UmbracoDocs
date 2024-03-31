@@ -118,14 +118,16 @@ When configuring a routed modal from a Property Editor, it's important to be awa
 
 **Generate the URL to a Modal Route Registration**
 
-The Modal registration has an option to retrieve a URL Builder. This is a function that can be used to generate a URL to a modal:
+The Modal registration has an option to retrieve a Route Builder via the observeRouteBuilder() method. This is a function that can be used to generate a URL to a modal.
+
+Notice in the example above that we're storing the routeBuilder in the `_modalRouteBuilder`, we can then use it to generate individual URLs like so:
 
 ```ts
-const modalLink = _myUrlBuilder?.({ alias: "my-input-alias" });
+const modalLink = this._modalRouteBuilder?.({ alias: "my-input-alias" });
 ```
 
-The `modalLink` from above could look like this: `/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-input-alias`
+The `modalLink` from above could look like this: `/umbraco/backoffice/my/location/modal/our-modal-somethingpicker/my-input-alias`
 
-Notice the Property Editor registration will add the property alias and variant ID to the URL, so it becomes:
-
-`/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-property-alias/en-us/my-input-alias`
+There are a couple of things to notice:
+* The alias of the modal extension is used in the url. We'll lowercase the alias and replace dots (.) with dashes, so a modal with alias 'Our.Fancy.ModalTest' would be translated to the url segment `our-fancy-modaltest`
+* Property Editor registration will add the property alias and variant ID to the URL, so it becomes: `/umbraco/backoffice/my/location/modal/Our.Modal.SomethingPicker/my-property-alias/en-us/my-input-alias`
