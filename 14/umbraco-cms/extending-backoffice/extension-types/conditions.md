@@ -17,7 +17,7 @@ In the following example we define the manifest for a Workspace Action, this act
 
 ```typescript
 {
-	type: 'workspaceAction',
+    type: 'workspaceAction',
 	name: 'example-workspace-action',
 	alias: 'My.Example.WorkspaceAction',
 	elementName: 'my-workspace-action-element',
@@ -37,7 +37,7 @@ The conditions are defined as an array of conditions. Each condition is an objec
 
 In the above example the `Umb.Condition.SectionAlias` condition is used. This condition takes a property `match` that must be set to the `alias` of the section to match.
 
-### Builtin Conditions types
+### Common builtin Condition Types
 
 The following conditions are available out of the box, for all extension types that support conditions.
 
@@ -94,3 +94,24 @@ export const manifest: ManifestCondition = {
     class: MyExtensionCondition,
 };
 ```
+
+## Extensive list of built in Condition Types
+**Note** This is still work in progress, many names are self explaining.
+
+* `Umb.Condition.SectionAlias`
+* `Umb.Condition.SectionUserPermission`
+* `Umb.Condition.WorkspaceAlias`
+* `Umb.Condition.WorkspaceEntityType`
+* `Umb.Condition.WorkspaceHasCollection`
+* `Umb.Condition.MenuAlias`
+* `Umb.Condition.User.AllowEnableAction`
+* `Umb.Condition.User.AllowUnlockAction`
+* `Umb.Condition.User.AllowDeleteAction`
+* `Umb.Condition.User.AllowDisableAction`
+* `Umb.Condition.User.AllowResendInviteAction`
+* `Umb.Condition.UserPermission`
+* `Umb.Condition.CollectionBulkActionPermission`
+* `Umb.Condition.Switch`
+* `Umb.Condition.BlockWorkspaceHasSettings`
+* `Umb.Condition.BlockEntryShowContentEdit`
+
