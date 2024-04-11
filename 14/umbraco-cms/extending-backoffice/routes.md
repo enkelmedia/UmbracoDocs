@@ -55,7 +55,21 @@ The order in which the routes are defined is important as the first match will b
 In the render method of the element, render the `umb-router-slot`:
 
 ```html
-<umb-router-slot .routes=${this._routes}></umb-router-slot> 
+<umb-router-slot
+    .routes=${this._routes}
+    @init=${(event: UmbRouterSlotInitEvent) => {
+        // Could use init-event to store the current router path as local state
+        console.log('init|absoluteActiveViewPath',event.target.absoluteActiveViewPath);
+        console.log('init|absoluteRouterPath',event.target.absoluteRouterPath);
+        console.log('init|localActiveViewPath',event.target.localActiveViewPath);
+        
+    }}
+    @change=${(event: UmbRouterSlotChangeEvent) => {
+        console.log('change|absoluteActiveViewPath',event.target.absoluteActiveViewPath);
+        console.log('change|absoluteRouterPath',event.target.absoluteRouterPath);
+        console.log('change|localActiveViewPath',event.target.localActiveViewPath);
+    }}>
+</umb-router-slot> 
 ```
 
 One can create links to allow navigation to a given route:
